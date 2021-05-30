@@ -3,41 +3,31 @@
 ![sky](https://user-images.githubusercontent.com/84865915/120062155-4e7a9200-c07e-11eb-9a57-7c6520750a72.JPG)
   This repository contains all the information studied and created during the [RTLDesignusingVerilogwithSKY130Technology](https://www.vlsisystemdesign.com/rtl-design-using-verilog-with-sky130-technology/) workshop. Workshop intends to teach the verilog coding guidelines that results in predictable logic in Silicon. it is important to note that every verilog code is not synthesizable and even if it is , it may result in different logic depending on the coding styles used. The course details all these aspects of the Verilog HDL with theory and backed with lot of practical examples. Workshop introduces to the digital logic design using Verilog HDL . Validating the functionality of the design using Functional Simulation. Writing Test Benches to validate the functionality of the RTL design . Logic synthesis of the Functional RTL Code. Gate Level Simulation of the Synthesized Netlist.
 Workshop Day wise Content :
-# Table of Contents
-  - [ Introduction to Verilog RTL design and Synthesis](#Introduction to Verilog RTL design and Synthesis)
-  - [Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](#Timing libs, hierarchical vs flat synthesis and efficient flop coding styles)
-  - [Combinational and sequential optmizations](#Combinational and sequential optmizations)
-  - [GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#GLS, blocking vs non-blocking and Synthesis-Simulation mismatch)
-  - [Optimization in synthesis](#day-1---Optimization in synthesis)
-  
-   - [Day 1 - Introduction to Verilog RTL design and Synthesis](#Day 1 - Introduction to Verilog RTL design and Synthesis)
-    - [Introduction to open-source simulator iverilog](#Introduction to open-source simulator iverilog)
-    - [Labs using iverilog and gtkwave](#Labs using iverilog and gtkwave)
-    - [introduction to Yosys and Logic synthesis](#introduction to Yosys and Logic synthesis)
-    - [Labs using Yosys and Sky130 PDKs](#Labs using Yosys and Sky130 PDKs)
-   
-  - [Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](#Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles)
-    - [Introduction to timing .libs](#Introduction to timing .libs)
-           - [Hierarchical vs Flat Synthesis](#Hierarchical vs Flat Synthesis)
-           - [Various Flop Coding Styles and optimization](#Various Flop Coding Styles and optimization)
-      
-  - [Day 3 - Combinational and sequential optmizations](#Day 3 - Combinational and sequential optmizations)
-    - [Introduction to optimizations](#Introduction to optimizations)
-    - [Combinational logic optimizations](#Combinational logic optimizations)
-    - [Sequential logic optimizations](#Sequential logic optimizations)
-    - [Sequential optimzations for unused outputsDesign](#Sequential optimzations for unused outputsDesign)
+# Table of Contents  
+- [Day 1 - Introduction to Verilog RTL design and Synthesis](#day-1---introduction-to-verilog-rtl-design-and-synthesis)
+    - [Introduction to open-source simulator iverilog](#introduction-to-open-source-simulator-iverilog)
     
-  - [Day 4 - GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#Day 4 - GLS, blocking vs non-blocking and Synthesis-Simulation mismatch)
-    - [GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements](#GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements)
-    - [Labs on GLS and Synthesis-Simulation Mismatch](#Labs on GLS and Synthesis-Simulation Mismatch)
-    - [Labs on synth-sim mismatch for blocking statement](#Labs on synth-sim mismatch for blocking statement)
+    - [Labs using iverilog and gtkwave](#labs-using-iverilog-and-gtkwave)
+    - [introduction to Yosys and Logic synthesis](#introduction-to-yosys-and-logic-synthesis)
+    - [Labs using Yosys and Sky130 PDKs](#labs-using-yosys-and-sky130-pdks)
+- [Day 2 - Timing libs hierarchical vs flat synthesis and efficient flop coding styles](#day-2---timing-libs-hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)
+    - [Introduction to timing libs](#introduction-to-timing-libs)
+    - [Hierarchical vs Flat Synthesis](#hierarchical-vs-flat-synthesis)
+    - [Various Flop Coding Styles and optimization](#various-flop-coding-styles-and-optimization)
+- [Day 3 - Combinational and sequential optmizations](#day-3---combinational-and-sequential-optmizations)
+    - [Introduction to optimizations](#introduction-to-optimizations)
+    - [Combinational logic optimizations](#combinational-logic-optimizations)
+    - [Sequential logic optimizations](#sequential-logic-optimizations)
+    - [Sequential optimzations for unused outputsDesign](#sequential-optimzations-for-unused-outputsdesign)
+- [Day 4 - GLS blocking vs non-blocking and Synthesis-Simulation mismatch](#day-4---gls-blocking-vs-non-blocking-and-synthesis-simulation-mismatch)
+    - [GLS Synthesis Simulation mismatch and Blocking non blocking statements](#gls-synthesis-simulation-mismatch-and-blocking-non-blocking-statements)
+    - [Labs on GLS and Synthesis-Simulation Mismatch](#labs-on-gls-and-synthesis-simulation-mismatch)
+    - [Labs on synth-sim mismatch for blocking statement](#labs-on-synth-sim-mismatch-for-blocking-statement)
+- [Day 5 - Optimization in synthesis](#day-5---optimization-in-synthesis)
+    - [If Case constructs](#if-case-constructs)
     
-  - [Day 5 - Optimization in synthesis](#Day 5 - Optimization in synthesis)
-    - [If Case constructs](#If Case constructs)
-    - [Labs on "Incomplete If Case"](#Labs on "Incomplete If Case")
-    - [Labs on "Incomplete overlapping Case"](#Labs on "Incomplete overlapping Case")
-    - [for loop and for generate](#for loop and for generate)
-    - [Labs on "for loop" and "for generate"](#Labs on "for loop" and "for generate)
+    - [for loop and for generate](#for-loop-and-for-generate)
+    - [Labs on for loop and for generate](#labs-on-for-loop-and-for-generate)
   - [References](#references)
   - [Acknowledgement](#acknowledgement)
 
@@ -75,6 +65,8 @@ eg:now we are going to take a 2 by 1 mux
 ## introduction to Yosys and Logic synthesis
 ### Typical synthesis flow
 ![c3](https://user-images.githubusercontent.com/84865915/120080505-ea37ec80-c0d6-11eb-97e0-27e78aaf2d21.JPG)
+
+# Labs using Yosys and Sky130 PDKs
 
 The following commands and steps are followed for performing the synthesis using yosys synthesizer
 
@@ -124,8 +116,8 @@ the show command will show the graphical version of logic it has realized
 ![y7](https://user-images.githubusercontent.com/84865915/120070252-3408de80-c0a7-11eb-8fba-c8517c2151d4.JPG)
 
 
-# Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles
-## Introduction to timing .libs
+# Day 2 - Timing libs hierarchical vs flat synthesis and efficient flop coding styles
+## Introduction to timing libs
 
 Below sceen shot shows how the .lib looks and what it contains,in sky 130 the 130 indicates it is 130 nm technology and .lib also shows the operating conditions process, voltage and temperature.
  
@@ -136,15 +128,17 @@ Below sceen shot shows how the .lib looks and what it contains,in sky 130 the 13
 
 .lib also has the information about the different features of the cells
 For each cell it gives the information about the 
-1.leakage power
-2.delay
-3.area
-4.input capacitance
-5.power associated
-6.timing information and etc..
+- 1.leakage power
+- 2.delay
+- 3.area
+- 4.input capacitance
+- 5.power associated
+- 6.timing information and etc..
 ## Hierarchical vs Flat Synthesis
 Here we have taken AND gate as one module and OR gate as another module both were instantiated under multiple module.
-Eg:module sub_module2 (input a, input b,output);
+- Eg:
+```
+  module sub_module2 (input a, input b,output);
                       Assign y=a | b;
      endmodule
 module sub_module1 (input a, input b,output);
@@ -154,7 +148,9 @@ module multiple_module (input a, input b, input c ,output y);
                       wire net1;
                       sub_module1 u1(.a(a),.b(b),.y(net1));
                       sub_module2 u2(.a(net1),.b(c),.y(y));
-     endmodule
+     endmodule 
+```
+
 Here we are going to synthesize the top level multiple module,we can also synthesize sub modules and also connect their nere netlists also but this can be done  mainly in 2 cases:
 - 1.If we have same module instatiated many times then instead of synthesizing many times we have to synthesize it one time and replicate that netlist those many times.
 - 2.If we have massive design then instead of giving massive design to the tool we will give portion by portion and stich all the netlist to get best possible netlist at the top level this is called **DIVIDE AND CONQUER** approach.:
@@ -170,6 +166,7 @@ After flattening heirarchies are not preserved
 
 Without flattening heirarchies are preserved and we have seen U1 and U2
 But when we flatten we can see entire structure which contains both AND and OR gates as shown in below screen shot
+
 ![image](https://user-images.githubusercontent.com/84865915/120033453-33296b80-c019-11eb-94d0-65baa08ec320.png)
 
 ## Various Flop Coding Styles and optimization
@@ -372,7 +369,7 @@ endmodule
 
 
 
-# Day 4 - GLS, blocking vs non-blocking and Synthesis-Simulation mismatch
+# Day 4 - GLS blocking vs non-blocking and Synthesis-Simulation mismatch
 ### what is GLS?
 - It stands for **Gate Level Simulation**.
 - Running the Test Bench With Netlist as design under Test.
@@ -380,6 +377,7 @@ endmodule
 - GLS is used to Verify the LOgical Correctness of the design after synthesis and it also used for Ensuring the Timing of design is met,For this GLS needs to be run with delay     annotation. 
 ### GLS using iverilog
 - When we give the Netlist,Gate Level Verilog Models and Testbench to the iverilog.the Netlist has all the standard cell instantiated and the meaning of standard cell is conveyed to the iverilog by **Gate Level Verilog Models** and After that the iverilog will produce vcd file using which we can generate Waveform using GTKwave.
+# GLS Synthesis Simulation mismatch and Blocking non blocking statements
 ### Synthesis-Simulation Mismatch
 Suppose we have a Netlist of:
 - and u_and(.a(a),.b(b))
@@ -690,10 +688,9 @@ behavioral modeling
 - •If all conditions are false, then the sequence of statements associated with the “else” clause is evaluated.
 ![c1](https://user-images.githubusercontent.com/84865915/120080200-692c2580-c0d5-11eb-9abf-2ce3528be51f.JPG)
 eg:
-- ![c2](https://user-images.githubusercontent.com/84865915/120080383-45b5aa80-c0d6-11eb-8b0a-a33a6fb1e893.JPG)
-
-    ## If Case constructs
-    ### eg:1-incomplete if
+![c2](https://user-images.githubusercontent.com/84865915/120080383-45b5aa80-c0d6-11eb-8b0a-a33a6fb1e893.JPG)
+ ## If Case constructs
+   ### eg:1-incomplete if
     this example tells us when we write a incomplete if statement then dlatch is inferred , whenver i0 is present i1 is seen on y
     ```
 ```
@@ -739,6 +736,8 @@ always #37 i1 = ~i1;
 always #57 i2 = ~i2;
 
 endmodule
+```
+```
 ### simulated output
 whenever i0 is going low the output y is latching on to either one or zero permanently and there is no change in y whenever i0 is low but when i0 signal is high the output follows i1 signal therfore we can say that as a latching action.
 ![Screenshot (421)](https://user-images.githubusercontent.com/84865915/120088584-ce047180-c10f-11eb-99ac-f0b93df716c4.png)
@@ -798,6 +797,7 @@ always #157 i2 = ~i2;
 always #67 i3 = ~i3;
 
 endmodule
+
 ### simulate output
 whenever io or i1 is true, then the output of the combinational logic which is the function of i0,i1,i2,i3 is going to be seen at the output
 
@@ -1150,7 +1150,7 @@ Loop statements include
 - **generate for loop must be used outside the always block**
 - generate for loop is used for **instantiating the hardware**
 
-## Labs on "for loop" and "for generate
+## Labs on for loop and for generate
 ### eg:mux_generate
 - Here i_int is a bus
 ```
